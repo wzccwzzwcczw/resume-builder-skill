@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "通用简历数据结构（单一数据源，三格式共用）",
+  "type": "object",
+  "required": ["basics"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "渲染控制",
+      "properties": {
+        "target_role": {"type": "string", "description": "目标岗位名（用于 ATS 关键词对齐）"},
+        "audience": {"type": "string", "enum": ["校招", "社招"], "default": "校招"},
+        "section_order": {
+          "type": "array",
+          "description": "段落顺序，默认校招序",
+          "default": ["basics", "education", "internships", "projects", "skills", "honors"]
+        }
+      }
+    },
+    "basics": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "role": {"type": "string", "description": "求职意向"},
+        "phone": {"type": "string"},
+        "email": {"type": "string"},
+        "github": {"type": "string"},
+        "portfolio": {"type": "string", "description": "博客/作品集链接（设计/产品岗刚需）"}
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "school": {"type": "string"},
+          "major": {"type": "string"},
+          "degree": {"type": "string"},
+          "grad_year": {"type": "string", "description": "届别，如 2027届"},
+          "date": {"type": "string"},
+          "gpa": {"type": "string"},
+          "courses": {"type": "string"}
+        }
+      }
+    },
+    "internships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "company": {"type": "string"},
+          "title": {"type": "string"},
+          "date": {"type": "string"},
+          "bullets": {"type": "array", "items": {"type": "string"}, "description": "XYZ量化法，可用 **加粗**"}
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "tag": {"type": "string", "description": "副标题/技术亮点，如（LangGraph + RAG）"},
+          "stack": {"type": "string", "description": "技术栈一行"},
+          "role": {"type": "string", "description": "你的角色"},
+          "date": {"type": "string"},
+          "bullets": {"type": "array", "items": {"type": "string"}, "description": "背景难点→方案→量化结果，可用 **加粗**"}
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {"type": "string"},
+          "items": {"type": "string", "description": "该类技能，逗号分隔，对齐 JD 原词"}
+        }
+      }
+    },
+    "honors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {"type": "string", "description": "竞赛/开源/证书"},
+          "text": {"type": "string"}
+        }
+      }
+    }
+  }
+}

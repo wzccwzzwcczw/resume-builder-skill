@@ -1,0 +1,10 @@
+# 通用简历 skill 依赖
+# Word 导出需要：
+python-docx>=1.1.0
+
+# PDF 导出需要本机安装 Chrome / Chromium（非 pip 依赖）：
+#   - macOS:   Google Chrome.app
+#   - Linux:   google-chrome / chromium-browser
+#   - Windows: Chrome.exe
+# 脚本自动探测；找不到可设 RESUME_CHROME=/path/to/chrome
+# HTML 导出无任何依赖（纯标准库）。

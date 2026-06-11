@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "target_role": "后端开发工程师",
+    "audience": "校招",
+    "section_order": ["basics", "education", "internships", "projects", "skills", "honors"]
+  },
+  "basics": {
+    "name": "张三",
+    "role": "后端开发工程师",
+    "phone": "138-0000-0000",
+    "email": "zhangsan@example.com",
+    "github": "github.com/zhangsan",
+    "portfolio": "博客：zhangsan.dev"
+  },
+  "education": [
+    {
+      "school": "某某大学",
+      "major": "计算机科学与技术",
+      "degree": "本科",
+      "grad_year": "2027届",
+      "date": "2023.09 – 2027.06",
+      "gpa": "3.8/4.0（专业前 10%）",
+      "courses": "数据结构、操作系统、计算机网络、数据库系统、分布式系统"
+    }
+  ],
+  "internships": [
+    {
+      "company": "某科技公司",
+      "title": "后端开发实习生",
+      "date": "2026.07 – 2026.09",
+      "bullets": [
+        "负责订单服务核心接口开发，基于 **Go + Gin** 重构下单链路，**接口 P99 延迟从 180ms 降到 45ms**",
+        "设计 **Redis 分布式锁** 解决超卖问题，支撑大促 **8k QPS** 峰值零事故"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "高并发短链服务",
+      "tag": "（个人项目 · 分布式）",
+      "stack": "Go · Redis · MySQL · 一致性哈希 · Docker",
+      "role": "独立开发",
+      "date": "2026.03 – 2026.05",
+      "bullets": [
+        "**难点：** 短码生成在高并发下易冲突、热点 key 压垮 DB",
+        "**方案：** 用 **发号器 + Base62 编码** 保证唯一，**多级缓存 + 布隆过滤器** 解决缓存穿透",
+        "**结果：** 单机压测 **1.2w QPS**，缓存命中率 **98%**，GitHub 获 **80+ star**"
+      ]
+    },
+    {
+      "name": "校园二手交易平台",
+      "tag": "（课程项目 · 全栈）",
+      "stack": "Spring Boot · MySQL · Vue · JWT",
+      "role": "3 人小组 · 负责后端",
+      "date": "2025.10 – 2025.12",
+      "bullets": [
+        "设计 RESTful API 与权限体系，**JWT + RBAC** 实现登录鉴权，覆盖 12 个核心接口",
+        "用 **ElasticSearch** 做商品搜索，搜索响应 **<100ms**，支撑 500+ 同学使用"
+      ]
+    }
+  ],
+  "skills": [
+    {"category": "编程语言", "items": "Go（熟练）、Java、Python、SQL"},
+    {"category": "后端框架", "items": "Gin、Spring Boot、GORM、MyBatis"},
+    {"category": "存储/中间件", "items": "MySQL、Redis、Kafka、ElasticSearch"},
+    {"category": "工程能力", "items": "Docker、Git、Linux、CI/CD、RESTful API"},
+    {"category": "计算机基础", "items": "数据结构与算法、操作系统、计算机网络、数据库原理"}
+  ],
+  "honors": [
+    {"type": "竞赛", "text": "蓝桥杯省赛一等奖、ACM 校赛金奖"},
+    {"type": "开源", "text": "个人 GitHub 累计 **150+ star**；为开源项目 XXX 贡献 3 个 PR"},
+    {"type": "证书", "text": "CET-6（560）、PAT 甲级"}
+  ]
+}
