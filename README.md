@@ -4,14 +4,6 @@
 
 > A Claude skill that turns raw experience into a polished résumé and exports HTML / PDF / Word from a **single source of truth**, with built-in **ATS keyword alignment**. Works for any role.
 
-## ✨ 特性
-
-- **单一数据源**：所有内容写进一份 `resume.json`，三种格式由脚本渲染 → 内容天然一致，换模板不动内容
-- **三格式导出**：HTML / PDF / Word，一条命令出齐
-- **两种风格**：`visual`（蓝白视觉版）+ `ats`（单栏纯净、可被 ATS 正确解析）
-- **ATS 通关引擎**：JD 关键词对齐 + 命中率评分 + 排版合规 +「不堆砌作弊」诚信红线
-- **写作方法论内置**：XYZ 量化法、动词库、量化引导问句、岗位关键词库、出稿体检清单
-- **通用**：JD 现场抽取兜底任意岗位，预置后端/前端/算法AI/产品/运营等高频方向
 
 ## 🚀 安装
 
@@ -60,14 +52,3 @@ python3 scripts/render.py examples/resume.example.json --out ~/Desktop --formats
 └── examples/resume.example.json  # 可直接跑的样例
 ```
 
-## ⚠️ 红线
-
-真实不造假（编造夸大面试必崩）；ATS 只做真实关键词对齐，**不做白字堆砌作弊**；校招控制 1 页；投 ATS 渠道一律用 `--style ats`。
-
-## 🙏 致敬
-
-方法论部分 **inspired by** [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) 的 *Tailored Resume Generator*。本仓库的脚本、数据 Schema、ATS 引擎、多格式渲染与中文 + 通用化适配均为原创实现。
-
-## 📄 License
-
-[MIT](./LICENSE) — 记得把 `LICENSE` 里的版权人改成你自己。
